@@ -73,13 +73,13 @@
             // cy.contains('button', 'Click Me').click({force: true});
             
         })
-        it('Elements - Links', ()=>{
+        it.only('Elements - Links', ()=>{
             cy.contains('span', 'Links').click();
             cy.contains('a', 'Home').invoke('removeAttr', 'target').click();
-            cy.contains('span', 'Elements').click();
+            cy.contains('Elements').click();
             cy.contains('span', 'Links').click();
             cy.get('[id="dynamicLink"]').invoke('removeAttr', 'target').click();
-            cy.contains('span', 'Elements').click();
+            cy.contains('Elements').click();
             cy.contains('span', 'Links').click();
             cy.contains('a', 'Created').click();
             cy.contains('a', 'No Content').click();
@@ -116,7 +116,7 @@
             cy.xpath('//div[@class="form-file"]/input[@id="uploadFile"]').click();
             
         })
-        it.only('Elements - Dynamic Properties', ()=>{
+        it('Elements - Dynamic Properties', ()=>{
             cy.contains('span', 'Dynamic Properties').click();
             cy.contains('button', 'Color Change').click();
             cy.contains('button', 'Will enable 5 seconds').click({force: true});
