@@ -34,9 +34,9 @@ describe('Forms', ()=>{
             cy.get('.react-datepicker__day--015').click();
             cy.get('[id="subjectsInput"]').type('Eng');
             cy.pause();
-            cy.contains('label', 'Sports').click();
-            cy.contains('label', 'Reading').click();
-            cy.contains('label', 'Music').click();
+            cy.contains('label', 'Sports').click( {force: true});
+            cy.contains('label', 'Reading').click( {force: true});
+            cy.contains('label', 'Music').click( {force: true});
             cy.get('[class="form-file-label"]').click();
             cy.get('[id="currentAddress"]').type('123 Harry Poter St');
             cy.xpath('//*[@id="state"]/div/div[2]/div').type('NCR').click();
