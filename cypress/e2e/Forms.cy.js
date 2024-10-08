@@ -21,30 +21,18 @@ describe('Forms', ()=>{
             cy.get('[placeholder="name@example.com"]').type('automationTesting@outlook.com');
             cy.contains('label', 'Male').click();
             cy.get('[placeholder="Mobile Number"]').type('6788066092');
-            // cy.get('id="dateOfBirthInput"').clear();
             cy.get('#dateOfBirthInput').click();
-
-            // Select the year
             cy.get('.react-datepicker__year-select').select('2000');
-
-            // Select the month
             cy.get('.react-datepicker__month-select').select('January');
-
-            // Select the day
             cy.get('.react-datepicker__day--015').click();
-            cy.get('[id="subjectsInput"]').type('Eng');
-            cy.pause();
+            cy.get('#subjectsInput').type('English{enter}').type('Computer Science{enter}');
             cy.contains('label', 'Sports').click( {force: true});
             cy.contains('label', 'Reading').click( {force: true});
             cy.contains('label', 'Music').click( {force: true});
             cy.get('[class="form-file-label"]').click();
-            cy.get('[id="currentAddress"]').type('123 Harry Poter St');
-            cy.xpath('//*[@id="state"]/div/div[2]/div').type('NCR').click();
-            cy.pause();
-            cy.xpath('//*[@id="city"]/div/div[2]/div').click();
-            cy.pause();
+            cy.get('[placeholder="Current Address"]').type('123 Harry Poter St');
+            cy.xpath('//*[@id="state"]/div/div[2]/div').type('NCR{enter}').click();
+            cy.xpath('//*[@id="city"]/div/div[2]/div').type('Delhi{enter}');
             cy.contains('button', 'Submit').click();
-            
-        
     })
 })
