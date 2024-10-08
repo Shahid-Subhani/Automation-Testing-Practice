@@ -1,4 +1,4 @@
-    /// <reference types="cypress" />
+/// <reference types="cypress" />
 
     describe('Visit Website', ()=>{
         Cypress.on('uncaught:exception', (err, runnable) => {
