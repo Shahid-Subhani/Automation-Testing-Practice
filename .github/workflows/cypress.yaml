@@ -11,22 +11,22 @@ on:
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest  # Use Ubuntu as the runner environment
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [chrome, firefox]
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Check out the repository's code
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Ensure you're using a compatible Node.js version
+          node-version: '20'
 
       - name: Install dependencies
-        run: npm install  # Install all npm dependencies, including Cypress
-
-      - name: Install Cypress
-        run: npx cypress install  # Download and install the Cypress binary
+        run: npm install
 
       - name: Run Cypress tests
-        run: npx cypress run  # Run Cypress tests
+        run: npx cypress run --browser ${{ matrix.browser }}
