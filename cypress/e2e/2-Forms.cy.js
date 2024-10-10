@@ -7,15 +7,18 @@ describe('Forms', ()=>{
     })
     it('Practice Form', ()=>{
         cy.intercept('GET', 'https://oajs.openx.net/esp*', { statusCode: 200 }).as('blockedRequest');
+        cy.intercept('POST', 'https://events.backtrace.io/api/**', { statusCode: 200 }).as('backtrace');
             cy.visit('https://demoqa.com/', {
                 timeout: 90000 // 1:30 minutes
             
             });
-            
-            cy.intercept('POST', 'https://events.backtrace.io/api/**', { statusCode: 200 }).as('backtrace');
+            // scroll to Forms and click
             cy.scrollTo('0%', '10%');
             cy.contains('Forms').click();
+            // go to practice form and click submit to check mandatory fields
             cy.contains('span', 'Practice Form').click();
+            cy.contains('button', 'Submit').click();
+            // fill up the form
             cy.get('[placeholder="First Name"]').type('Automation');
             cy.get('[placeholder="Last Name"]').type('testing');
             cy.get('[placeholder="name@example.com"]').type('automationTesting@outlook.com');
