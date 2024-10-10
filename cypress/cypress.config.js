@@ -8,8 +8,3 @@ module.exports = defineConfig({
     },
   },
 });
-module.exports = {
-  e2e: {
-    chromeWebSecurity: false,
-  },
-};
