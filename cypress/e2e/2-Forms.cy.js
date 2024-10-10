@@ -31,8 +31,8 @@ describe('Forms', ()=>{
             cy.contains('label', 'Music').click( {force: true});
             cy.get('[class="form-file-label"]').click();
             cy.get('[placeholder="Current Address"]').type('123 Harry Poter St');
-            cy.xpath('//*[@id="state"]/div/div[2]/div').type('NCR{enter}').click();
-            cy.xpath('//*[@id="city"]/div/div[2]/div').type('Delhi{enter}');
+            cy.xpath('//*[@id="state"]/div/div[2]/div').type('NCR{enter}');
+            cy.contains('Select City').type('Delhi{enter}')
             cy.contains('button', 'Submit').click();
     })
 })
