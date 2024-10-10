@@ -138,5 +138,5 @@ describe('Elements', ()=>{
         cy.wait(5000)
         // button visible after 5 seconds
         cy.contains('button', 'Visible After 5 Seconds').should('contain', 'Visible After 5 Seconds').click();
-    })
-})
+    });
+});

@@ -86,5 +86,5 @@ describe('Alerts, Frame & Windows', () => {
         cy.contains('button', 'Large modal').click();
         cy.wait(3000);
         cy.contains('button', 'Close').click();
-    })
+    });
 });

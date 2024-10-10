@@ -34,5 +34,5 @@ describe('Forms', ()=>{
             cy.xpath('//*[@id="state"]/div/div[2]/div').type('NCR{enter}');
             cy.contains('Select City').type('Delhi{enter}')
             cy.contains('button', 'Submit').click();
-    })
-})
+    });
+});
