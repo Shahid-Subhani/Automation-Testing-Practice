@@ -15,8 +15,6 @@ describe('Elements', ()=>{
             timeout: 90000 // 1:30 minutes
         
         });
-        cy.intercept('https://b1-wndc1.zemanta.com/**', { statusCode: 200 }).as('blockedScript');
-        cy.intercept('POST', 'https://events.backtrace.io/api/**', { statusCode: 200 }).as('backtrace');
         // scroll to Elements section
         cy.scrollTo('0%', '10%');
         cy.contains('Elements').click();

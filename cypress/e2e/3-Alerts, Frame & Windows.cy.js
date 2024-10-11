@@ -30,7 +30,6 @@ describe('Alerts, Frame & Windows', () => {
         cy.pause();
         cy.get('[id="messageWindowButton"]').click();
     });
-
     it('Alerts', () => {
         cy.contains('span', 'Windows').click();
         cy.get(':nth-child(3) > .element-list > .menu-list > #item-1').click({ force: true });
@@ -41,43 +40,6 @@ describe('Alerts, Frame & Windows', () => {
         cy.get('#confirmButton').click();
         cy.get('#promtButton').click();
     });
-
-    // it.only('Frames', () => {
-    //     cy.contains('span', 'Windows').click();
-    //     cy.contains('span', 'Frames').click();
-
-    //     const getIframeDocument = (iframeSelector) => {
-    //         return cy.get(iframeSelector).should('exist');
-    //     };
-
-    //     const getIframeBody = (iframeSelector) => {
-    //         return getIframeDocument(iframeSelector)
-    //             .its('0.contentDocument.body').should('not.be.undefined')
-    //             .then(cy.wrap);
-    //     };
-
-    //     // Example: Interact with an element inside the first iframe
-    //     getIframeBody('#frame1').find('#sampleHeading').click();
-
-    //     // Example: Interact with an element inside the second iframe
-    //     getIframeBody('#frame2').find('This is a sample page').type('Hello World! Welcome to Automation');
-
-    //     // Switch back to the parent frame
-    //     cy.get('#sampleHeading').click();
-
-    //     // Add the assertion here
-    //     cy.wrap({ foo: 'bar' }).its('quux').should('not.exist');
-    // });
-
-    // it('Nested Frames', () => {
-    //     cy.contains('span', 'Windows').click();
-    //     cy.contains('span', 'Nested Frames').click({ force: true });
-    //     cy.frameLoaded('#frame1');
-    //     cy.iframe('#frame1').within(() => {
-    //         cy.frameLoaded('/html/body/p');
-    //         cy.iframe('/html/body/p').contains('Child Iframe').click();
-    //     });
-    // });
     it('Modal Dialogs', ()=>{
         cy.contains('span', 'Modal Dialogs').click({force:true});
         cy.contains('button', 'Small modal').click();
