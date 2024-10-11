@@ -18,19 +18,19 @@ describe('Visit Book store and perform actions', ()=>{
         cy.contains('Book Store Application').click({force:true});
     })
     it('Login', ()=>{
-        cy.intercept('POST', 'https://www.google.com/recaptcha/api2/userverify*', {
-            statusCode: 200,
-            body: { success: true }, // Mock a successful reCAPTCHA response
-        }).as('captchaValidation');
+        // cy.intercept('POST', 'https://www.google.com/recaptcha/api2/userverify*', {
+        //     statusCode: 200,
+        //     body: { success: true }, // Mock a successful reCAPTCHA response
+        // }).as('captchaValidation');
 
-        // Intercept the registration API call
-        cy.intercept('POST', '/api/register', {
-            statusCode: 201,
-            body: {
-                success: true,
-                message: 'Registration successful!',
-            },
-        }).as('registerRequest');
+        // // Intercept the registration API call
+        // cy.intercept('POST', '/api/register', {
+        //     statusCode: 201,
+        //     body: {
+        //         success: true,
+        //         message: 'Registration successful!',
+        //     },
+        // }).as('registerRequest');
         
         // attempt to login without credentials
         cy.get('button[id="login"]').click();
